@@ -19,7 +19,7 @@
     },
     "import/resolver": {
       "typescript": {
-        "project": "./tsconfig.json"
+        "project": "tsconfig.dev.json"
       },
       "node": true
     }
@@ -32,9 +32,9 @@
       }
     },
     {
-      "files": ["*.ts", "*.tsx"],
+      "files": ["**/*.ts", "**/*.tsx"],
       "parserOptions": {
-        "project": ["webrtc-ui/tsconfig.json"]
+        "project": ["tsconfig.dev.json"]
       },
       "rules": {
         "@typescript-eslint/consistent-type-imports": [
