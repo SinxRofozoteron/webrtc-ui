@@ -37,11 +37,10 @@
         "project": ["tsconfig.dev.json"]
       },
       "rules": {
+        "react/prop-types": "off",
         "@typescript-eslint/consistent-type-imports": [
           "error",
-          {
-            "fixStyle": "inline-type-imports"
-          }
+          { "prefer": "type-imports", "fixStyle": "separate-type-imports" }
         ],
         "@typescript-eslint/member-ordering": "error",
         "@typescript-eslint/consistent-type-exports": "error",
@@ -54,6 +53,7 @@
     }
   ],
   "rules": {
+    "react/react-in-jsx-scope": "off",
     "prettier/prettier": [
       "error",
       {
@@ -77,9 +77,15 @@
       "error",
       {
         "newlines-between": "always",
-        "groups": ["builtin", "external", "parent", "sibling", "index", "type"]
+        "groups": [["builtin", "external"], ["parent", "sibling", "index"], ["type"]]
       }
     ],
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": "import", "next": "expression" },
+      { "blankLine": "any", "prev": "import", "next": "import" }
+    ],
+    "import/newline-after-import": "error",
     "import/no-unresolved": "error"
   },
   "ignorePatterns": ["build", "node_modules"]
