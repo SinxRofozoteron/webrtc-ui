@@ -22,7 +22,7 @@ const RoundButton = ({ label, icon, ...buttonProps }: RoundButtonProps) => {
       {...buttonProps}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}>
-      <ButtonInside open={open} label={label}>
+      <ButtonInside open={open} label={label} color={buttonProps.color}>
         {icon}
       </ButtonInside>
     </CustomButton>

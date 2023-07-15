@@ -6,17 +6,22 @@ import { ICON_CONTAINER_CLASS } from './constants';
 import { LabelContainer } from './LabelContainer';
 import { IconContainer } from './IconContainer';
 
+import type { ButtonProps } from '../Button';
+
 type ButtonInsideProps = {
   open: boolean;
   children: ReactNode;
   label: string;
+  color?: ButtonProps['color'];
 };
 
-export const ButtonInside = ({ open, children, label }: ButtonInsideProps) => {
+export const ButtonInside = ({ open, children, label, color }: ButtonInsideProps) => {
   return (
     <>
-      <IconContainer className={ICON_CONTAINER_CLASS}>{children}</IconContainer>
-      <LabelContainer open={open}>
+      <IconContainer className={ICON_CONTAINER_CLASS} color={color}>
+        {children}
+      </IconContainer>
+      <LabelContainer open={open} color={color}>
         <Collapse in={open} orientation="horizontal">
           <Typography color="text.primary" noWrap>
             {label}

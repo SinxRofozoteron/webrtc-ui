@@ -1,8 +1,16 @@
 import { styled } from '../styles';
+import { getColor } from './utils';
+
+import type { ButtonProps } from '../Button';
+
+type LabelContainerProps = {
+  color?: ButtonProps['color'];
+  open: boolean;
+};
 
 export const LabelContainer = styled('div', {
   shouldForwardProp: prop => prop !== 'open'
-})<{ open: boolean }>(({ theme, ...props }) => ({
+})<LabelContainerProps>(({ theme, ...props }) => ({
   width: props.open ? 'auto' : '0px',
   height: '4rem',
   paddingLeft: props.open ? '2.5rem' : '0px',
@@ -14,7 +22,7 @@ export const LabelContainer = styled('div', {
   alignItems: 'center',
   alignContent: 'center',
   justifyContent: 'center',
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor: getColor(props.color, 'main', theme),
   transition: theme.transitions.create(['all'], {
     duration: theme.transitions.duration.standard
   }),
