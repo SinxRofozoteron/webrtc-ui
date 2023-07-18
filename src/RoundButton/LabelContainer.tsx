@@ -22,6 +22,10 @@ export const LabelContainer = styled('div', {
   alignItems: 'center',
   alignContent: 'center',
   justifyContent: 'center',
+  color:
+    props.color === 'primary'
+      ? theme.palette.text.primary
+      : theme.palette.text.secondary,
   backgroundColor: getColor(props.color, 'main', theme),
   transition: theme.transitions.create(['all'], {
     duration: theme.transitions.duration.standard

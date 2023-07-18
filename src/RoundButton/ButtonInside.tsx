@@ -23,9 +23,7 @@ export const ButtonInside = ({ open, children, label, color }: ButtonInsideProps
       </IconContainer>
       <LabelContainer open={open} color={color}>
         <Collapse in={open} orientation="horizontal">
-          <Typography color="text.primary" noWrap>
-            {label}
-          </Typography>
+          <Typography noWrap>{label}</Typography>
         </Collapse>
       </LabelContainer>
     </>

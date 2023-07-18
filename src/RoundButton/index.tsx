@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { ButtonInside } from './ButtonInside';
 import { CustomButton } from './CustomButton';
 
+import type { ButtonProps } from './CustomButton';
 import type { ReactNode } from 'react';
-import type { ButtonProps } from '@mui/material/Button';
 
 export type RoundButtonProps = {
   label: string;

@@ -54,7 +54,7 @@ export const Secondary: Story = {
   }
 };
 
-/**Secondary color.*/
+/**Success color.*/
 export const Success: Story = {
   args: {
     children: 'Button',

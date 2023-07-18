@@ -3,7 +3,14 @@ import Button from '../Button';
 import { ICON_CONTAINER_CLASS } from './constants';
 import { getColor } from './utils';
 
-export const CustomButton = styled(Button)(({ theme, ...props }) => {
+import type { ElementType, ReactElement } from 'react';
+import type { ButtonProps as ButtonPropsMui } from '../Button';
+
+export type ButtonProps = {
+  component?: ElementType | ReactElement;
+} & ButtonPropsMui;
+
+export const CustomButton = styled(Button)<ButtonProps>(({ theme, ...props }) => {
   return {
     display: 'inline-flex',
     position: 'relative',
@@ -29,4 +36,4 @@ export const CustomButton = styled(Button)(({ theme, ...props }) => {
       }
     }
   };
-}) as typeof Button;
+});
