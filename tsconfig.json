@@ -30,11 +30,5 @@
     "lib": ["ESNext", "DOM"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": [
-    "node_modules",
-    "build",
-    "devHarness",
-    "src/**/*.stories.ts",
-    "src/**/*.stories.tsx"
-  ]
+  "exclude": ["node_modules", "build", "src/**/*.stories.ts", "src/**/*.stories.tsx"]
 }
