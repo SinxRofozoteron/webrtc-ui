@@ -23,6 +23,10 @@ const meta: Meta<typeof Button> = {
         'info',
         'warning'
       ]
+    },
+    disabled: {
+      defaultValue: false,
+      control: 'boolean'
     }
   }
 };
@@ -87,5 +91,15 @@ export const Warning: Story = {
     children: 'Button',
     color: 'warning',
     variant: 'contained'
+  }
+};
+
+/**Disabled.*/
+export const Disabled: Story = {
+  args: {
+    children: 'Button',
+    color: 'primary',
+    variant: 'contained',
+    disabled: true
   }
 };

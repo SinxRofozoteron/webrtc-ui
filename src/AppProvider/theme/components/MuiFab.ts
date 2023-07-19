@@ -6,29 +6,33 @@ export const MuiFab: Components<Theme>['MuiFab'] = {
   },
   styleOverrides: {
     sizeMedium: ({ ownerState }) => {
-      const addonStyles: CSSInterpolation = {};
+      const addonStyle: CSSInterpolation = {};
 
       if (ownerState.variant === 'extended') {
-        addonStyles.width = 'auto';
+        addonStyle.width = 'auto';
+        addonStyle.minWidth = '4rem';
+        addonStyle.borderRadius = '4rem';
       }
 
       return {
         height: '4rem',
         width: '4rem',
-        ...addonStyles
+        ...addonStyle
       };
     },
     sizeSmall: ({ ownerState }) => {
-      const addonStyles: CSSInterpolation = {};
+      const addonStyle: CSSInterpolation = {};
 
       if (ownerState.variant === 'extended') {
-        addonStyles.width = 'auto';
+        addonStyle.width = 'auto';
+        addonStyle.minWidth = '3rem';
+        addonStyle.borderRadius = '3rem';
       }
 
       return {
         height: '3rem',
         width: '3rem',
-        ...addonStyles
+        ...addonStyle
       };
     },
     root: ({ ownerState, theme }) => {
@@ -43,6 +47,7 @@ export const MuiFab: Components<Theme>['MuiFab'] = {
       if (ownerState.variant === 'extended') {
         addonStyle.width = 'auto';
         addonStyle.borderRadius = '5rem';
+        addonStyle.minWidth = '5rem';
       }
       return {
         height: '5rem',
