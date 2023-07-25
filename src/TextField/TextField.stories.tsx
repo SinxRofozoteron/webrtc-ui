@@ -6,8 +6,11 @@ const meta: Meta<typeof TextField> = {
   component: TextField,
   tags: ['autodocs'],
   argTypes: {
+    variant: {
+      control: 'select',
+      options: ['filled', 'outlined', 'standard']
+    },
     disabled: {
-      value: false,
       control: 'boolean'
     },
     onChange: {
@@ -18,7 +21,6 @@ const meta: Meta<typeof TextField> = {
       description:
         'Color scheme of the component.\nPossible options: ' +
         '"primary", "secondary", "success", "error", "info", "warning".',
-      defaultValue: 'primary',
       control: 'select',
       options: ['primary', 'secondary', 'success', 'error', 'info', 'warning'],
       table: {
@@ -33,7 +35,6 @@ const meta: Meta<typeof TextField> = {
     },
     error: {
       description: 'Controls whether component is displayed in error state.',
-      defaultValue: false,
       control: 'boolean',
       table: {
         defaultValue: {
@@ -45,7 +46,8 @@ const meta: Meta<typeof TextField> = {
   args: {
     error: false,
     color: 'primary',
-    disabled: false
+    disabled: false,
+    variant: 'outlined'
   }
 };
 
@@ -53,16 +55,20 @@ export default meta;
 
 type Story = StoryObj<typeof TextField>;
 
-/** Primary color. Meant to be used with the default background color. */
-export const Primary: Story = {
+/** Outlined TextField with primary color.
+ * Meant to be used with the default background color.
+ */
+export const OutlinedPrimary: Story = {
   args: {
     color: 'primary',
     label: 'Primary Text Field'
   }
 };
 
-/**Secondary color. Meant to be used with the paper background color.*/
-export const Secondary: Story = {
+/** Outlined TextField with secondary color.
+ * Meant to be used with the paper background color.
+ */
+export const OutlinedSecondary: Story = {
   args: {
     color: 'secondary',
     label: 'Secondary Text Field'
@@ -74,42 +80,42 @@ export const Secondary: Story = {
   }
 };
 
-/**Success color.*/
-export const Success: Story = {
+/** Outlined TextField with success color.*/
+export const OutlinedSuccess: Story = {
   args: {
     color: 'success',
     label: 'Success Text Field'
   }
 };
 
-/**Error color.*/
-export const Error: Story = {
+/** Outlined TextField with error color.*/
+export const OutlinedError: Story = {
   args: {
     color: 'error',
     label: 'Error Text Field'
   }
 };
 
-/**Info color.*/
-export const Info: Story = {
+/** Outlined TextField with info color.*/
+export const OutlinedInfo: Story = {
   args: {
     color: 'info',
     label: 'Info Text Field'
   }
 };
 
-/**Warning color.*/
-export const Warning: Story = {
+/** Outlined TextField with warning color.*/
+export const OutlinedWarning: Story = {
   args: {
     color: 'warning',
     label: 'Warning Text Field'
   }
 };
 
-/** Text Field in disabled state.
+/** Outlined TextField in disabled state.
  *  When color is set to "primary" meant to be used with the default background color.
  */
-export const DisabledPrimary: Story = {
+export const OutlinedDisabledPrimary: Story = {
   args: {
     color: 'primary',
     label: 'Disabled Text Field',
@@ -117,14 +123,41 @@ export const DisabledPrimary: Story = {
   }
 };
 
-/** Text Field in disabled state.
+/** Outlined TextField in disabled state.
  *  When color is set to "secondary" meant to be used with the paper background color.
  */
-export const DisabledSecondary: Story = {
+export const OutlinedDisabledSecondary: Story = {
   args: {
     color: 'secondary',
     label: 'Disabled Text Field',
     disabled: true
+  },
+  parameters: {
+    backgrounds: {
+      default: 'paper'
+    }
+  }
+};
+
+/** Filled TextField with primary color.
+ * Meant to be used with the default background color.
+ */
+export const FilledPrimary: Story = {
+  args: {
+    color: 'primary',
+    label: 'Primary Text Field',
+    variant: 'filled'
+  }
+};
+
+/** Filled TextField with secondary color.
+ * Meant to be used with the paper background color.
+ */
+export const FilledSecondary: Story = {
+  args: {
+    color: 'secondary',
+    label: 'Primary Text Field',
+    variant: 'filled'
   },
   parameters: {
     backgrounds: {
