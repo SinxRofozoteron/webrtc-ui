@@ -1,19 +1,15 @@
 {
-  "name": "webrtc-ui",
+  "name": "@rtcapp/webrtc-ui",
   "version": "1.0.0",
-  "description": "",
+  "description": "Component library based on material-ui with a custom theme.",
   "main": "build/index.js",
-  "types": "build/index.d.ts",
-  "scripts": {
-    "build": "npm-run-all clean build:*",
-    "build:babel": "cross-env BABEL_ENV=production babel --out-dir build --extensions '.ts,.tsx' --ignore '**/*.test.ts,**/*.test.tsx' ./src",
-    "build:typescript": "tsc",
-    "clean": "rimraf build",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+  "dependencies": {
+    "@emotion/react": "11.11.1",
+    "@emotion/styled": "11.11.0",
+    "@mui/icons-material": "5.14.0",
+    "@mui/material": "5.13.7",
+    "core-js": "2.6.12"
   },
-  "author": "Aliaksandr Burakou",
-  "license": "ISC",
   "devDependencies": {
     "@babel/cli": "7.22.6",
     "@babel/core": "7.22.8",
@@ -59,12 +55,19 @@
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "4.15.1"
   },
-  "dependencies": {
-    "@emotion/react": "11.11.1",
-    "@emotion/styled": "11.11.0",
-    "@mui/icons-material": "5.14.0",
-    "@mui/material": "5.13.7",
-    "core-js": "2.6.12",
-    "react": "18.2.0"
-  }
+  "peerDependencies": {
+    "react-intl": "6.x",
+    "react": "18.x"
+  },
+  "scripts": {
+    "build": "npm-run-all clean build:*",
+    "build:babel": "cross-env BABEL_ENV=production babel --out-dir build --extensions '.ts,.tsx' --ignore '**/*.test.ts,**/*.test.tsx' ./src",
+    "build:typescript": "tsc",
+    "clean": "rimraf build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "author": "Aliaksandr Burakou",
+  "license": "ISC",
+  "types": "./build/index.d.ts"
 }
