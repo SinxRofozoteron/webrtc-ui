@@ -1,6 +1,6 @@
 {
   "name": "@rtcapp/webrtc-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Component library based on material-ui with a custom theme.",
   "main": "build/index.js",
   "dependencies": {
