@@ -1,0 +1,17 @@
+name: Verify pull request branch
+on: pull_request
+
+jobs:
+  check-title-and-test:
+    name: Check title and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v3
+      - uses: actions/setup-node@v3
+        with: 
+          node-version: 16.x
+      - uses: beemojs/conventional-pr-action@v2
+        with:
+          config-preset: eslint
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
