@@ -13,5 +13,6 @@ jobs:
       - uses: beemojs/conventional-pr-action@v2
         with:
           config-preset: eslint
+          auto-install: false
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
