@@ -6,11 +6,21 @@ jobs:
     name: Check title and test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout pull request code
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
         with: 
           node-version: 16.x
-      - uses: beemojs/conventional-pr-action@v2
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Check MR title
+        uses: beemojs/conventional-pr-action@v2
         with:
           config-preset: eslint
           auto-install: false
