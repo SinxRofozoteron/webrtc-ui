@@ -107,6 +107,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
+      - name: Test
+        run: ls
       - name: Semantic Release dry run
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
