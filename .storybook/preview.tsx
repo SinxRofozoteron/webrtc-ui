@@ -5,8 +5,6 @@ import { theme } from '../src/AppWrapper/theme';
 
 import type { Preview } from '@storybook/react';
 
-console.log('HERE');
-
 const preview: Preview = {
   decorators: [
     Story => (
