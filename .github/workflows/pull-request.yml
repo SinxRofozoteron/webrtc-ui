@@ -88,8 +88,6 @@ jobs:
     steps:
       - name: Checkout pull request code
         uses: actions/checkout@v3
-        with:
-          path: package.json
       - name: Setup node
         uses: actions/setup-node@v3
         with: 
