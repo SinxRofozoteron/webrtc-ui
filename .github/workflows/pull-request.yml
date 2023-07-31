@@ -105,6 +105,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
+          path: build
       - name: Test
         run: ls
       - name: Semantic Release dry run
