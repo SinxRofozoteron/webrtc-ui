@@ -51,8 +51,8 @@ jobs:
       - name: Lint
         run: npm run lint
   
-  build:
-    name: Build
+  build-semantic-release-dry-run:
+    name: Build and Semantic Release dry run
     runs-on: ubuntu-latest
     needs: 
       - check-title
@@ -75,11 +75,9 @@ jobs:
         run: npm ci
       - name: Create build
         run: npm run build
-      - name: Upload artifact 
-        uses: actions/upload-artifact@v3
-        with:
-          name: build
-          path: |
-            build
-            package.json
-            .npmignore 
+      - name: Semantic Release dry run
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release --dry-run
+      
