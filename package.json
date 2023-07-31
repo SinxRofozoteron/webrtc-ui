@@ -67,7 +67,8 @@
     "build:typescript": "tsc",
     "clean": "rimraf build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint": "eslint ."
   },
   "author": "Aliaksandr Burakou",
   "license": "ISC",
