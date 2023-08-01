@@ -114,8 +114,6 @@ jobs:
         with:
           name: build
           path: build
-      - name: Test
-        run: ls
       - name: Semantic Release dry run
         continue-on-error: true
         env: 
