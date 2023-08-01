@@ -112,5 +112,5 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: unset GITHUB_ACTIONS && npx semantic-release --dry-run --no-ci
+        run: npx semantic-release --dry-run --no-ci
       
