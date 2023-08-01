@@ -110,5 +110,5 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release --ci false --dry-run --dubug --branches "$GITHUB_HEAD_REF#refs/heads/"
+        run: npx semantic-release --ci false --dry-run --dubug --branches "${SOURCE_BRANCH#refs/heads/}"
       
