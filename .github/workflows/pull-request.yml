@@ -92,6 +92,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
           branch: 'dry'
+      - name: Checkout dry branch
+        uses: actions/checkout@v3
+        with:
+          ref: dry
       - name: Setup node
         uses: actions/setup-node@v3
         with: 
@@ -117,6 +121,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: unset GITHUB_ACTIONS && npx semantic-release --dry-run --no-ci
+      - name: Back to main
+        uses: actions/checkout@v3
       - name: Delete dry branch
         uses: dawidd6/action-delete-branch@v3
         with:
