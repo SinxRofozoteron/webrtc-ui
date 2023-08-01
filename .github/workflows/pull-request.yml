@@ -106,8 +106,6 @@ jobs:
           path: build
       - name: Test
         run: ls
-      - name: Checkout branch
-        run: git checkout $GITHUB_HEAD_REF
       - name: Semantic Release dry run
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
