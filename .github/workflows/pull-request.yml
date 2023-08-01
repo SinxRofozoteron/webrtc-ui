@@ -112,5 +112,5 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release --dry-run --no-ci --branches $CI_COMMIT_BRANCH
+        run: npx semantic-release --dry-run --no-ci --branches main,$CI_COMMIT_BRANCH
       
