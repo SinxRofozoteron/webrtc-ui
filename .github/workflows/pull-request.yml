@@ -86,6 +86,12 @@ jobs:
     steps:
       - name: Checkout pull request code
         uses: actions/checkout@v3
+      - name: Create dry branch
+        uses: peterjgrainger/action-create-branch@v2.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with:
+          branch: 'dry'
       - name: Setup node
         uses: actions/setup-node@v3
         with: 
@@ -110,5 +116,10 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release --ci false --dry-run --dubug --branches "${SOURCE_BRANCH#refs/heads/}"
+        run: unset GITHUB_ACTIONS && npx semantic-release --dry-run --no-ci
+      - name: Delete dry branch
+        uses: dawidd6/action-delete-branch@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          branches: dry
       
