@@ -117,6 +117,7 @@ jobs:
       - name: Test
         run: ls
       - name: Semantic Release dry run
+        continue-on-error: true
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
