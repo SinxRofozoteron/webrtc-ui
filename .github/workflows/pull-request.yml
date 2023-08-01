@@ -106,9 +106,11 @@ jobs:
           path: build
       - name: Test
         run: ls
+      - name: Checkout branch
+        run: git checkout $GITHUB_HEAD_REF
       - name: Semantic Release dry run
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release --dry-run --no-ci --branches main,$CI_COMMIT_BRANCH
+        run: unset GITHUB_ACTIONS && npx semantic-release --dry-run --no-ci
       
