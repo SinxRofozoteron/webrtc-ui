@@ -88,6 +88,8 @@ jobs:
     steps:
       - name: Checkout pull request code
         uses: actions/checkout@v3
+        with:
+          ref: '${{ steps.extract_branch.outputs.branch }}'
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
