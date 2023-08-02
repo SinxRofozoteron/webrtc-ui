@@ -1,6 +1,5 @@
 branches:
   - main
-  - dry
 plugins:
   - '@semantic-release/commit-analyzer':
       preset: 'eslint'
