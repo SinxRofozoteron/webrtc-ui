@@ -104,5 +104,5 @@ jobs:
         with:
           dry_run: true
           branches:
-            - "${{ steps.extract_branch.outputs.branch }}"
+            - $GITHUB_HEAD_REF
       
