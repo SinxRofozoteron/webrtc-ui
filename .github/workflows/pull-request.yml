@@ -1,0 +1,76 @@
+name: Verify pull request branch
+on: pull_request
+
+jobs:
+  check-title:
+    name: Check title
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout pull request code
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 16.x
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Check MR title
+        uses: beemojs/conventional-pr-action@v2
+        with:
+          config-preset: eslint
+          auto-install: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout pull request code
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 16.x
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+  
+  build:
+    name: Check Build
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout pull request code
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 16.x
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Create build
+        run: npm run build
+      

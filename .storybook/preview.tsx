@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-import AppWrapper from '../src/AppProvider';
-import { theme } from '../src/AppProvider/theme';
+import AppWrapper from '../src/AppWrapper';
+import { theme } from '../src/AppWrapper/theme';
 
 import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
   decorators: [
     Story => (
-      <AppWrapper>
+      <AppWrapper locale="en" messages={{}}>
         <Story />
       </AppWrapper>
     )
