@@ -92,8 +92,6 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
-      - name: Print files
-        run: ls
       - name: Extract branch name
         shell: bash
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
