@@ -77,7 +77,9 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: build
-          path: build
+          path: |
+            build
+            package.json
   
   semantic-release-dry-run:
     name: Semantic Release dry run
@@ -88,7 +90,8 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: build
-          path: build
+      - name: Print files
+        run: ls
       - name: Semantic Release dry run
         uses: cycjimmy/semantic-release-action@v3
         env: 
