@@ -106,6 +106,6 @@ jobs:
           branches: |
             [
               'main',
-              '$GITHUB_HEAD_REF'
+              '${{ steps.extract_branch.outputs.branch }}'
             ]
       
