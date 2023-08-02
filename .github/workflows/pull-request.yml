@@ -103,5 +103,9 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         with:
           dry_run: true
-          branches: [$GITHUB_HEAD_REF]
+          branches: |
+            [
+              'main',
+              '$GITHUB_HEAD_REF'
+            ]
       
