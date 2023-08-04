@@ -7,7 +7,12 @@
         "preset": "eslint"
       }
     ],
-    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "eslint"
+      }
+    ],
     "@semantic-release/github",
     "@semantic-release/npm",
     "@semantic-release/git"
