@@ -1,3 +1,8 @@
+export { default as Accordion } from './Accordion';
+export { default as AccordionActions } from './AccordionActions';
+export { default as AccordionDetails } from './AccordionDetails';
+export { default as AccordionSummary } from './AccordionSummary';
+export { default as Alert } from './Alert';
 export { default as AppWrapper } from './AppWrapper';
 export { default as Button } from './Button';
 export { default as RoundButton } from './RoundButton';
@@ -15,8 +20,4 @@ export { default as Select } from './Select';
 export { default as Box } from './Box';
 export { default as Grid } from './Grid';
 export { default as Skeleton } from './Skeleton';
-export { default as Accordion } from './Accordion';
-export { default as AccordionActions } from './AccordionActions';
-export { default as AccordionDetails } from './AccordionDetails';
-export { default as AccordionSummary } from './AccordionSummary';
 export * from './styles';
