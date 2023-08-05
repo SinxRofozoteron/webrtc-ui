@@ -5,6 +5,7 @@ export { default as AccordionSummary } from './AccordionSummary';
 export { default as Alert } from './Alert';
 export { default as AlertTitle } from './AlertTitle';
 export { default as AppWrapper } from './AppWrapper';
+export { default as AppBar } from './AppBar';
 export { default as Button } from './Button';
 export { default as RoundButton } from './RoundButton';
 export { default as CircularProgress } from './CircularProgress';
