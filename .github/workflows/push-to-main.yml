@@ -27,8 +27,7 @@ jobs:
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v3
         with:
-          extra_plugins: conventional-changelog-eslint
-          extra_plugins: 
+          extra_plugins:
             - conventional-changelog-eslint
             - '@semantic-release/git'
         env: 
