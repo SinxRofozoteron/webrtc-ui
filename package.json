@@ -65,7 +65,6 @@
     "build": "npm-run-all clean build:*",
     "build:babel": "cross-env BABEL_ENV=production babel --out-dir build --extensions '.ts,.tsx' --ignore '**/*.test.ts,**/*.test.tsx' ./src",
     "build:typescript": "tsc",
-    "build:copy-package-json": "copyfiles \"package.json\" build",
     "clean": "rimraf build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
