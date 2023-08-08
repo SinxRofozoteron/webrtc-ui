@@ -8,14 +8,20 @@ import type { MessageFormatElement } from 'react-intl';
 
 type AppWrapperProps = {
   children: React.ReactNode;
-  messages: Record<string, string> | Record<string, MessageFormatElement[]>;
+  messages: Record<
+    string,
+    Record<string, string> | Record<string, MessageFormatElement[]>
+  >;
   locale: string;
   defaultLocale?: string;
 };
 
 const AppWrapper = ({ children, messages, locale, defaultLocale }: AppWrapperProps) => {
   return (
-    <IntlProvider messages={messages} locale={locale} defaultLocale={defaultLocale}>
+    <IntlProvider
+      messages={messages[locale]}
+      locale={locale}
+      defaultLocale={defaultLocale}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </IntlProvider>
   );
