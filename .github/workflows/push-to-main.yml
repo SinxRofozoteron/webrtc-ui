@@ -6,7 +6,7 @@ on:
 
 jobs:
     build:
-      name: Build and Release
+      name: Build
       runs-on: ubuntu-latest
       steps:
         - name: Checkout code
@@ -31,6 +31,8 @@ jobs:
             path: build
             retention-days: 1
     release:
+      name: Release
+      runs-on: ubuntu-latest
       steps:
         - name: Download artifact
           uses: actions/download-artifact@v3
