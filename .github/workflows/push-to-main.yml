@@ -58,11 +58,11 @@ jobs:
       - name: cd into storybook-static
         run: cd storybook-static
       - name: Push static files to SinxRofozoteron.github.io
-        uses: dmnemec/copy_file_to_another_repo_action@main
+        run: |
+          git init
+          git remote add destination https://github.com/SinxRofozoteron/SinxRofozoteron.github.io
+          git add .
+          git commit -m "Updated Storybook static files."
+          git push destination HEAD:main
         env: 
-          API_TOKEN_GITHUB: ${{ secrets.STATIC_WEBSITE_TOKEN }}
-        with:
-          source_file: '*'
-          destination_repo: 'SinxRofozoteron/SinxRofozoteron.github.io'
-          user_email: 'alex.burakou@gmail.com'
-          user_name: 'SinxRofozoteron'
+          GITHUB_TOKEN: ${{ secrets.STATIC_WEBSITE_TOKEN }}
