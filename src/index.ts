@@ -17,6 +17,7 @@ export { default as FormHelperText } from './FormHelperText';
 export { default as Grid } from './Grid';
 export { default as ImageList } from './ImageList';
 export { default as ImageListItem } from './ImageListItem';
+export { default as ImageListItemBar } from './ImageListItemBar';
 export { default as Input } from './Input';
 export { default as InputLabel } from './InputLabel';
 export { default as Menu } from './Menu';
