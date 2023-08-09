@@ -27,7 +27,7 @@ module.exports = {
       ]
     },
     production: {
-      ignore: ['**/*.test.js', '**/*.stories.tsx', 'src/**/*.stories.ts'],
+      ignore: ['**/*.test.js'],
       plugins: [
         '@babel/plugin-transform-object-assign',
         '@babel/plugin-transform-runtime',
