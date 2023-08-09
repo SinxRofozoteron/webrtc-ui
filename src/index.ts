@@ -7,6 +7,7 @@ export { default as AlertTitle } from './AlertTitle';
 export { default as AppWrapper } from './AppWrapper';
 export { default as AppBar } from './AppBar';
 export { default as Button } from './Button';
+export { default as Container } from './Container';
 export { default as RoundButton } from './RoundButton';
 export { default as CircularProgress } from './CircularProgress';
 export { default as Menu } from './Menu';
