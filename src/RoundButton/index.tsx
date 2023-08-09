@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import * as React from 'react';
 
 import { ButtonInside } from './ButtonInside';
 import { CustomButton } from './CustomButton';
