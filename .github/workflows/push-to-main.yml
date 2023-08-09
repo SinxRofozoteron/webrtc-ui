@@ -55,10 +55,9 @@ jobs:
         run: npm ci
       - name: Build static files
         run: npm run build-storybook
-      - name: cd into storybook-static
-        run: cd storybook-static
       - name: Push static files to SinxRofozoteron.github.io
         run: |
+          cd storybook-static
           git init
           git remote add destination https://github.com/SinxRofozoteron/SinxRofozoteron.github.io
           git add .
