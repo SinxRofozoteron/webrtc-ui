@@ -80,6 +80,8 @@ jobs:
           name: storybook-build
       - name: Commit new build and push to remote repo
         run: |
+          git config --global user.email ${{ secrets.USER_EMAIL }}
+          git config --global user.name ${{ secrets.USER_NAME }}
           git add .
           git commit -m "Updated storybook build"
           git push
