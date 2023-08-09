@@ -1,6 +1,7 @@
 import Collapse from '@mui/material/Collapse';
 import Typography from '@mui/material/Typography';
 import { type ReactNode } from 'react';
+import * as React from 'react';
 
 import { ICON_CONTAINER_CLASS } from './constants';
 import { LabelContainer } from './LabelContainer';
