@@ -22,4 +22,5 @@ export { default as Select } from './Select';
 export { default as Box } from './Box';
 export { default as Grid } from './Grid';
 export { default as Skeleton } from './Skeleton';
+export * from './icons';
 export * from './styles';
