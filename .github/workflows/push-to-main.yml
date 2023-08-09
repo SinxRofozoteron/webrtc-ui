@@ -73,7 +73,9 @@ jobs:
           repository: SinxRofozoteron/SinxRofozoteron.github.io
           token: ${{ secrets.STATIC_WEBSITE_TOKEN }}
       - name: Remove previous build
-        run: rm -r *
+        run: |
+          shopt -s extglob
+          rm -r !("README.md")
       - name: Get storybook build
         uses: actions/download-artifact@v3
         with:
