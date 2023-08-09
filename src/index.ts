@@ -12,6 +12,7 @@ export { default as Button } from './Button';
 export { default as CircularProgress } from './CircularProgress';
 export { default as Container } from './Container';
 export { default as Fab } from './Fab';
+export { default as Fade } from './Fade';
 export { default as FormControl } from './FormControl';
 export { default as FormHelperText } from './FormHelperText';
 export { default as Grid } from './Grid';
