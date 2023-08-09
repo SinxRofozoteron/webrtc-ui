@@ -33,3 +33,25 @@ jobs:
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          
+  build-release-pages:
+    name: Build and Release to Github pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with: 
+          node-version: 16.x
+      - name: Build static files
+        run: npm run build-storybook
+      - name: Push static files to SinxRofozoteron.github.io
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env: 
+          API_TOKEN_GITHUB: ${{ secrets.STATIC_WEBSITE_TOKEN }}
+        with:
+          source_file: 'storybook-static/'
+          destination_repo: 'SinxRofozoteron/SinxRofozoteron.github.io'
+          user_email: 'alex.burakou@gmail.com'
+          user_name: 'SinxRofozoteron'
