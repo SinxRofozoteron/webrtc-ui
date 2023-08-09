@@ -20,6 +20,7 @@ export { default as ImageListItem } from './ImageListItem';
 export { default as ImageListItemBar } from './ImageListItemBar';
 export { default as Input } from './Input';
 export { default as InputLabel } from './InputLabel';
+export { default as Masonry } from './Masonry';
 export { default as Menu } from './Menu';
 export { default as MenuItem } from './MenuItem';
 export { default as RoundButton } from './RoundButton';
