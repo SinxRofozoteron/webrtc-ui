@@ -44,6 +44,15 @@ jobs:
         uses: actions/setup-node@v3
         with: 
           node-version: 16.x
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: npm-deps-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
       - name: Build static files
         run: npm run build-storybook
       - name: Push static files to SinxRofozoteron.github.io
