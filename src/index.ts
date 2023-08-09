@@ -28,5 +28,6 @@ export { default as Select } from './Select';
 export { default as Skeleton } from './Skeleton';
 export { default as Stack } from './Stack';
 export { default as TextField } from './TextField';
+export { default as Typography } from './Typography';
 export * from './icons';
 export * from './styles';
