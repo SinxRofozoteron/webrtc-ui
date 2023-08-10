@@ -4,14 +4,18 @@ import { MuiMenuItem } from './MuiMenuItem';
 import { MuiOutlinedInput } from './MuiOutlinedInput';
 import { MuiTextField } from './MuiTextField';
 import { MuiInput } from './MuiInput';
+import { MuiLoadingButton } from './MuiLoadingButton';
 
 import type { Components, Theme } from '@mui/material/styles';
 
-export const components: Components<Theme> = {
+export const components: Components<Theme> & {
+  MuiLoadingButton: typeof MuiLoadingButton;
+} = {
   MuiFab,
   MuiButton,
   MuiMenuItem,
   MuiOutlinedInput,
   MuiTextField,
-  MuiInput
+  MuiInput,
+  MuiLoadingButton
 };
