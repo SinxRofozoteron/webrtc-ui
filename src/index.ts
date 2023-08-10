@@ -34,3 +34,4 @@ export { default as TextField } from './TextField';
 export { default as Typography } from './Typography';
 export * from './icons';
 export * from './styles';
+export { default as useMediaQuery } from './useMediaQuery';
