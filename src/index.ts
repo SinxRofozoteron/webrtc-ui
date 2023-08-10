@@ -16,6 +16,7 @@ export { default as Fade } from './Fade';
 export { default as FormControl } from './FormControl';
 export { default as FormHelperText } from './FormHelperText';
 export { default as Grid } from './Grid';
+export { default as IconButton } from './IconButton';
 export { default as ImageList } from './ImageList';
 export { default as ImageListItem } from './ImageListItem';
 export { default as ImageListItemBar } from './ImageListItemBar';
